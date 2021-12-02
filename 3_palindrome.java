@@ -3,6 +3,7 @@ package algorithms;
 public class algorithms {
 
 	public static void main(String[] args) {
+		// Palindrome Algorithm
 		String str = "Radar";	// the string we're checking
 		String reverseStr = "";	// the string we're adding to
 		int strLength = str.length();	// length of string
