@@ -1,4 +1,5 @@
 public class SleepIn {
+  // create a method that takes in two booleans
   void setClock(boolean weekday, boolean vacation) {
     if (!weekday || vacation) {
       System.out.println(true);
@@ -6,6 +7,7 @@ public class SleepIn {
       System.out.println(false);
     }
   }
+  // create a main block 
   public static void main(String[] args) {
     SleepIn one = new SleepIn();
 
