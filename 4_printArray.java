@@ -1,15 +1,15 @@
-package algorithms;
-
-public class algorithms {
-
+public class Practice {
+    // create a method that checks to see if a given string is a palindrome
+    void printArray(int[] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+        }
+    }
 	public static void main(String[] args) {
-		String array[] = {"My", "name", "is", "Zelma"};
-		
-		// loop through and print contents
-		for(int i = 0; i < array.length; i++) {
-			System.out.println(array[i]);
-		}
-		
+		Practice p = new Practice();
+
+        int[] myArr = {1,2,3};
+        p.printArray(myArr);
 	} // end of main method
 
 } // end of class
