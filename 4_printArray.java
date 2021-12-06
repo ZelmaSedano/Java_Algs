@@ -1,15 +1,16 @@
+// import Array util library
+import java.util.Arrays;    
+
 public class Practice {
-    // create a method that checks to see if a given string is a palindrome
-    void printArray(int[] arr) {
-        for(int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-        }
+    // create a method that prints out the elements of an array
+    void printElements(String[] arr) {
+        System.out.println(Arrays.toString(arr));
     }
 	public static void main(String[] args) {
 		Practice p = new Practice();
 
-        int[] myArr = {1,2,3};
-        p.printArray(myArr);
+        String[] myArr = {"alone", "at", "last"};
+        p.printElements(myArr);
 	} // end of main method
 
 } // end of class
