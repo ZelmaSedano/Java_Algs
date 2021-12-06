@@ -1,11 +1,21 @@
-// open in algorithms folder
-public class algorithms {
+// create a method that repeats a string num times
+class Practice {
+    void repeatString(String str,int num) {
+        String result = "";
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = "abc";
-		
-		System.out.println( str.repeat(3) );
-	}
+        int i=0;
+        while(i < num) {
+            result = result + str;
+            i++;    // iterate up so it terminates
+        }
 
+        System.out.print(result);
+    }
+    public static void main(String[] args) {  // main block
+        // create a new object & call repeatString on it
+        Practice p = new Practice();
+
+        String myStr = "hi";
+        p.repeatString(myStr, 3);
+    }
 }
