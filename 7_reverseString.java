@@ -1,24 +1,24 @@
-package algorithms;
+public class Practice {
+    // create a method that reverses a given string
+    void reverseStr(String str) {
+        // create a string variable to hold reversed string
+        String reversed = "";
+        // create a variable to hold length of string, since we can't use str.length() unlike arr.length()
+        int strLength = str.length();
 
-public class algorithms {
+        // loop backwards through string, adding to reversed
+        for(int i = (strLength-1); i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+
+        System.out.print(reversed);
+    }
 
 	public static void main(String[] args) {
-		// string we're analyzing
-		String str = "yola";
-		// declare variable to hold reversed string
-		String reversed = "";
-		
-		// create a variable to hold the string's length
-		int strLength = str.length();
-		
-		// loop backwards through the string
-		for(int i = (strLength - 1); i>= 0; i--) {
-			reversed += str.charAt(i); // add the char at i
-		}
-		
-		System.out.println(reversed);
-		
-		
+		Practice p = new Practice();
+
+        String myStr = "word";
+        p.reverseStr(myStr);
 	} // end of main method
 
 } // end of class
