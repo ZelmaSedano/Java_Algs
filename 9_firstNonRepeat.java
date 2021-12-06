@@ -1,23 +1,24 @@
-package algorithms;
-
-public class algorithms {
+public class Practice {
+    // create a method that finds the first non-repeating letter in a string
+    void firstNonRepeat(String str) {
+        // loop through the str, checking i
+        // convert string to an array of chars w/ .toCharArray
+        for(char i : str.toCharArray()) {
+            // if the current element is only present once
+            // check the .lastIndexOf i and see if the current element is the last index of that char
+            // if it is the last index, then return i & break
+            if(str.indexOf(i) == str.lastIndexOf(i)) {
+                System.out.print(i);
+                break;  // stop program from running after
+            }
+        }
+    }
 
 	public static void main(String[] args) {
-		// array of letters
-		String str = "eer";
-		
-		// loop through the str checking i
-		for(char i : str.toCharArray()) { // converts str to arr
-			if(str.indexOf(i) == str.lastIndexOf(i)) {
-				System.out.println("first non-repeating char is " + i);
-				break;	// so you don't run it again and 
-						// a 2nd non-repeat
-			}
-			// - checks for the presence of the current 
-			//   element in the whole array of chars
-			// - if the position of the last element is NOT present 
-			//   in the string so far, then return the current letter
-		}
+		Practice p = new Practice();
+
+        String myStr = "wword";
+        p.firstNonRepeat(myStr);
 	} // end of main method
 
 } // end of class
