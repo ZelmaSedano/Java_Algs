@@ -1,23 +1,33 @@
-package algorithms;
+public class Practice {
+    // create a method that checks to see if a given string is a palindrome
+    boolean isPalindrome(String str) {
+        // edge-case scenario
+        if(str.length() < 0) {
+            return false;
+        }
 
-public class algorithms {
+        str = str.toLowerCase();
+
+        String reversed = ""; // reverse the string
+        int strLength = str.length();  // save the length in variable
+
+        // loop backwards through string
+        for(int i = (strLength -1); i >= 0; i--) {
+            reversed += str.charAt(i); // add char at i
+        }
+
+        if(str.equals(reversed)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 	public static void main(String[] args) {
-		// Palindrome Algorithm
-		String str = "Radar";	// the string we're checking
-		String reverseStr = "";	// the string we're adding to
-		int strLength = str.length();	// length of string
-		
-		for(int i = (strLength - 1); i>= 0; i--) {
-			reverseStr += str.charAt(i); // add the char at i
-		}
-		
-		if(str.toLowerCase().equals(reverseStr.toLowerCase())) {
-			System.out.println(str + " is a palindrome");
-		} else {
-			System.out.println(str + " is not a palindrome");
-		}
-		
+		Practice p = new Practice();
+
+        System.out.print(p.isPalindrome("Mom"));
 	} // end of main method
 
 } // end of class
