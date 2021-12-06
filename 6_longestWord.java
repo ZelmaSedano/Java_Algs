@@ -1,6 +1,3 @@
-// create a method that sorts a given array
-import java.util.Arrays;  // - import Array utils library to use .sort()
-
 public class Practice {
     // create a method that finds the longest word in a string
     void longestWord(String str) {
