@@ -1,22 +1,16 @@
-package algorithms;
+class Practice {
+    // create a method that finds the number of words in a given string
+    void wordCount(String str) {
+        // split string into an array of words
+        String[] words = str.trim().split(" ");
 
-public class algorithms {
+        System.out.println(words.length);
+    }
 
-	public static void main(String[] args) {
-		// Word Count Algorithm
-		String str1 = "Today is a New Day";
-		
-		// split str1 into an array of words
-		String[] wordArray = str1.trim().split(" ");
-		
-		// you can't print out array, you have to loop & print
-//		for(int i = 0; i < wordArray.length; i++) {
-//			System.out.println(wordArray[i]);
-//		}
-		
-		// print out the length of array
-		System.out.println(wordArray.length);
-		
-	} // end of main method
+    // main method
+    public static void main(String[] args) {
+        Practice p = new Practice();
 
-} // end of class
+        p.wordCount("hi there");
+    }
+}
