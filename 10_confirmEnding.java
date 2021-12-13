@@ -1,15 +1,12 @@
-public class Practice {
-    // create a method that finds the first non-repeating letter in a string
-    void confirmEnding(String str, String target) {
-        boolean result = str.endsWith(target);
-        System.out.print(result);
+class Practice {
+    // create a method that checks to see if a given string ends w/ target
+    public boolean confirmEnding(String str, String target) {
+        return str.endsWith(target);
     }
 
-	public static void main(String[] args) {
-		Practice p = new Practice();
-
-        String myStr = "wow";
-        p.confirmEnding(myStr, "e");
-	} // end of main method
-
-} // end of class
+    // main method
+    public static void main(String[] args) {
+        Practice p = new Practice();
+        System.out.println(p.confirmEnding("hi", "i"));
+    }
+}
