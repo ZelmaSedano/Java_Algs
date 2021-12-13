@@ -1,21 +1,12 @@
-// create a method that repeats a string num times
 class Practice {
-    void repeatString(String str,int num) {
-        String result = "";
-
-        int i=0;
-        while(i < num) {
-            result = result + str;
-            i++;    // iterate up so it terminates
-        }
-
-        System.out.print(result);
+    // create a function that repeats a given string int num times
+    public String repeatString(String str, int num) {
+        return str.repeat(num);
     }
-    public static void main(String[] args) {  // main block
-        // create a new object & call repeatString on it
-        Practice p = new Practice();
 
-        String myStr = "hi";
-        p.repeatString(myStr, 3);
+    // main method
+    public static void main(String[] args) {
+        Practice p = new Practice();
+        System.out.println(p.repeatString("hi", 3));
     }
 }
