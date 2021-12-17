@@ -1,24 +1,38 @@
-public class Practice {
-    // create a method that finds the first non-repeating letter in a string
-    void firstNonRepeat(String str) {
-        // loop through the str, checking i
-        // convert string to an array of chars w/ .toCharArray
-        for(char i : str.toCharArray()) {
-            // if the current element is only present once
-            // check the .lastIndexOf i and see if the current element is the last index of that char
-            // if it is the last index, then return i & break
-            if(str.indexOf(i) == str.lastIndexOf(i)) {
-                System.out.print(i);
-                break;  // stop program from running after
+import java.util.*;
+
+class Practice {
+    public char firstNonRepeatingCharacter(String s) {
+        // create a hash map
+        HashMap<Character, Integer> characterCount = new HashMap<>();
+        // Best to discuss it with interviewer, what should we return here?
+        if (s == null)
+            return ' ';
+        if (s.length() == 0)
+            return ' ';
+        // turn the string into an Array of chars & loop through it, call each char "c"
+        for (char c : s.toCharArray()) {
+            // characterCount is map
+            // if char "c" isn't in hashmap, then add c to hashmap w/ 1 as the value
+            if (!characterCount.containsKey(c)) {
+                characterCount.put(c, 1);
+                // if it IS in the counter, add the character & increment its value by 1
+            } else {
+                characterCount.put(c, characterCount.get(c) + 1);
             }
         }
+        // loop through hashmap again and check to see if one of the c's value is 1
+        for (char c : s.toCharArray()) {
+            // if it their is a character w/ 1 as value, return that character
+            if (characterCount.get(c) == 1)
+                return c;
+        }
+
+        return ' ';
     }
 
-	public static void main(String[] args) {
-		Practice p = new Practice();
-
-        String myStr = "wword";
-        p.firstNonRepeat(myStr);
-	} // end of main method
-
-} // end of class
+    // main method
+    public static void main(String[] args) {
+        Practice p = new Practice();
+        System.out.println(p.firstNonRepeatingCharacter("yyola"));
+    }
+}
