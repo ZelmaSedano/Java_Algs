@@ -1,45 +1,45 @@
-
-// import the util library to use HashMap
-import java.util.*;
+import java.util.HashMap;
 
 class Practice {
-    // create a method that returns the first non-repeating character in a string
-    public char firstNonRepeating(String str) {
-        // take care of edge cases, if length is 0 return -1
+    // create a method to find the first non-repeating character in a string
+    public char firstNonRepeat(String str) {
+        // edge case - if it's empty, return a 0 (since you can only return the same
+        // type as declared in the method, put single quotes around it to make it a char
+        // -1 won't work b/c having two characters breaks the char rule)
         if (str.length() == 0) {
-            // since it's a char method, we HAVE to return char
             return '0';
         }
 
-        // create a HashMap that has Character as key & Integer as Value
+        // create a HashMap & add each letter to it
         HashMap<Character, Integer> characterCount = new HashMap<>();
 
-        // using an enhanced for loop: convert strint into array of chars
+        // using an enhance for loop, convert the string into an array of characters and
+        // loop through
         for (char c : str.toCharArray()) {
-            // if HashMap characterCount DOESN'T contain key (c)
+            // if char is not in hashmap
             if (!characterCount.containsKey(c)) {
-                // then add key c w/ value of 1
+                // add the character - c = character, 1 = value
                 characterCount.put(c, 1);
             } else {
-                // add c and add its former value (acquired using .get()) + 1
+                // if it does exist, then get the value for c and add 1 while replacing its
+                // former value with new value
                 characterCount.put(c, characterCount.get(c) + 1);
             }
         }
 
-        // loop through the HashMap again and check to see if one of c's values is 1
+        // loop through the charArray again and check to see if any char's value is
+        // if it is, return it
         for (char c : str.toCharArray()) {
-            // if it their is a character w/ 1 as value, return that character
             if (characterCount.get(c) == 1) {
                 return c;
             }
         }
-
-        // as a backup, return nothing
+        // default return statement
         return '0';
     }
 
     public static void main(String[] args) {
         Practice p = new Practice();
-        System.out.println(p.firstNonRepeating("yola"));
+        System.out.println(p.firstNonRepeat("hi"));
     }
 }
