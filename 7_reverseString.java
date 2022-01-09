@@ -1,26 +1,25 @@
-class Practice {
-    // create a method that reverses and returns a given string
+import java.util.stream.*;
+import java.util.*; // imports List
+
+public class Practice {
+    // create a method that returns a reversed string - use the long method
     public String reverseString(String str) {
-        // if string is empty, return null
         if (str.length() == 0) {
-            return null;
+            return "please enter a valid string";
         }
 
-        String result = ""; // empty string to add to
-        str = str.replaceAll("\\s+", "");
-        // create a variable to hold the String's length
-        int length = str.length();
+        String reversed = "";
 
-        for (int i = length - 1; i >= 0; i--) {
-            result += str.charAt(i);
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
         }
 
-        return result;
+        return reversed;
     }
 
-    // main method
     public static void main(String[] args) {
         Practice p = new Practice();
-        System.out.println(p.reverseString("h   i"));
+
+        System.out.println(p.reverseString("no"));
     }
 }
