@@ -1,15 +1,18 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
+import java.util.stream.*;
 
 public class Practice {
-
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        // create a list of integers
+        List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
 
-        List<Integer> even = numbers.stream()
+        // create a List of integers called "even" & set it to equal nums.stream()
+        List<Integer> even = nums.stream()
+                // apply the filter method, and only return even numbers
                 .filter(number -> number % 2 == 0)
+                // collect your data into a list
                 .collect(Collectors.toList());
-        System.out.println("even numbers:" + even);
+        // print out even
+        System.out.println("even numbers: " + even);
     }
 }
