@@ -1,31 +1,32 @@
-import java.util.*; // imports Arrays
-import java.util.Map.Entry; // imports Map.Entry
 import java.util.stream.*;
+import java.util.*;
+import java.util.Map.Entry; // imports Map.Entry
 
-public class Practice {
-    // create a method that finds the first non-repeating character in a string
-    public void firstNonRepeat(String str) {
-        // create a LinkedHashMap & make it the length of str
-        Map<Character, Integer> counts = new LinkedHashMap<>(str.length());
+public class Practice1 {
+  public void firstNonRepeat(String str) {
+    // create a LinkedHashMap, because that keeps the order intact
+    Map<Character, Integer> charCount = new LinkedHashMap<>(str.length());
 
-        for (char c : str.toCharArray()) {
-            // ternary operator
-            // variable = c (cuz we're adding it anyway), conditional ? falseValue :
-            // trueValue
-            // if conditional is false, falseValue wins; if true, trueValue wins
-            counts.put(c, counts.containsKey(c) ? counts.get(c) + 1 : 1);
-        }
-
-        for (Entry<Character, Integer> entry : counts.entrySet()) {
-            if (entry.getValue() == 1) {
-                System.out.println(entry.getKey());
-                return; // keeps it from continuing to loop & return more
-            }
-        }
+    // using enhanced for loop, loop through the string & convert it to an Array of
+    // chars
+    for (char c : str.toCharArray()) {
+      // if HashMap contains c, then make value previous value + 1
+      // if it doens't containe c, then add and make value 1
+      charCount.put(c, charCount.containsKey(c) ? charCount.get(c) + 1 : 1);
     }
 
-    public static void main(String[] args) {
-        Practice p = new Practice();
-        p.firstNonRepeat("hi there");
+    // loop through Entry of chars & ints & call each element 'entry'
+    // convert map to entrySet
+    for (Entry<Character, Integer> entry : charCount.entrySet()) {
+      if (entry.getValue() == 1) {
+        System.out.println(entry.getKey());
+        return;
+      }
     }
+  }
+
+  public static void main(String[] args) {
+    Practice p = new Practice();
+    p.firstNonRepeat("hi there");
+  }
 }
