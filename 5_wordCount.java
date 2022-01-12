@@ -1,20 +1,17 @@
-import java.util.*;
+import java.util.*; // imports Arrays
+import java.util.stream.*;
 
 public class Practice {
-    // create a method that returns the number of words in a string
-    // hint: you will split the string into a collection of words (Array) & return
-    // length
-    public int wordCount(String str) { // takes a string as an argument
-        // split the string into a collection of words & save in array called "words"
+    public int wordCount(String str) {
+        if (str.length() == 0) {
+            return -1;
+        }
         String[] words = str.trim().split(" ");
-
         return words.length;
     }
 
-    // main method where new Objects are created & methods are called
     public static void main(String[] args) {
         Practice p = new Practice();
-
-        System.out.println(p.wordCount("hi there yo there ya da"));
+        System.out.println(p.wordCount("hi there"));
     }
 }
