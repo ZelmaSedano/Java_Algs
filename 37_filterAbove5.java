@@ -1,17 +1,17 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*; // imports Arrays
+import java.util.stream.*;
 
-public class Java8Predicate {
-
+public class Practice {
     public static void main(String[] args) {
+        // create a List of integers
+        List<Integer> nums = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        // make a variable called result & set its valie to list.stream()
+        List<Integer> result = nums.stream()
+                .filter(x -> x > 5)
+                .collect(Collectors.toList());
 
-        List<Integer> collect = list.stream().filter(x -> x > 5).collect(Collectors.toList());
-
-        System.out.println(collect); // [6, 7, 8, 9, 10]
+        System.out.println(result);
 
     }
-
 }
