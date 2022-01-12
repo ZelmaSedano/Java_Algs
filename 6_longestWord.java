@@ -1,24 +1,28 @@
-public class Practice {
-    // create a method that finds the longest word in a string
-    void longestWord(String str) {
-        // split the string into a collection of words
-        String[] words = str.split(" ");
-        String longest = ""; // create variable to hold longest word
+import java.util.*; // imports Arrays
+import java.util.stream.*;
 
-        // loop through the array of words
-        for(int i = 0; i < words.length; i++) {
-            if(words[i].length() > longest.length()) {
+public class Practice {
+    public String longestWord(String str) {
+        // if the string is empty, return 'please enter valid string'
+        if (str.length() == 0) {
+            return "please enter a valid string";
+        }
+
+        // create a variable to hold longest & split the string into words
+        String longest = "";
+        String[] words = str.trim().split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() > longest.length()) {
                 longest = words[i];
             }
         }
-        System.out.println("Longest word: " + longest);
+
+        return longest;
     }
 
-	public static void main(String[] args) {
-		Practice p = new Practice();
-
-        String myStr = "hi there";
-        p.longestWord(myStr);
-	} // end of main method
-
-} // end of class
+    public static void main(String[] args) {
+        Practice p = new Practice();
+        System.out.println(p.longestWord("this is a sentence"));
+    }
+}
