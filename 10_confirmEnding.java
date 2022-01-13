@@ -1,17 +1,26 @@
+import java.util.stream.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Practice {
-    // create a method that checks to see if a given string ends w/ a given target
-    // string --> ex: "tree", "ee" --> true
     public boolean confirmEnding(String str, String target) {
-        return str.endsWith(target);
+        // target can return a false positive when empty
+        if (str.length() == 0) {
+            return false;
+        }
+        if (target.length() == 0) {
+            return false;
+        }
+
+        if (str.endsWith(target)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    // main method where new Objects are created & methods are called
     public static void main(String[] args) {
-        // new object
         Practice p = new Practice();
-
-        System.out.println(p.confirmEnding("hi", "e"));
+        System.out.println(p.confirmEnding("Hi", ""));
     }
 }
