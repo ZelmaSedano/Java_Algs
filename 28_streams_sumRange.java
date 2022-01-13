@@ -1,13 +1,14 @@
 import java.util.stream.*;
+import java.util.*;
+import java.util.Map.Entry; // imports Map.Entry
 
 public class Practice {
-
     public static void main(String[] args) {
-        // print out the results by nesting everything inside a System.out statement
-        System.out.println(
-                IntStream
-                        .range(1, 5) // stops at 4, 5 is non-inclusive
-                        .sum());
-    }
+        int result = IntStream
+                .range(1, 6)
+                .sum();
 
+        System.out.println(result);
+
+    }
 }
