@@ -8,7 +8,6 @@ public class Practice {
         String[] names = { "Al", "Ankit", "Kushal", "Shivika", "Sarah" };
         Arrays.stream(names)
                 // filters names that start with "S"
-                .filter(x -> x.startsWith("S"))
                 .sorted()
                 .forEach(System.out::println);
     }
