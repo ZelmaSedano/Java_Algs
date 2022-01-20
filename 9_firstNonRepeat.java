@@ -1,10 +1,9 @@
 import java.util.stream.*;
-import java.util.*;
 import java.util.Map.Entry;
+import java.util.*;
 
 public class Practice {
-    // make a method that returns the first letter that's not repeated in the String
-    public void firstNonRepeat(String str) {
+    public static char firstNonRepeat(String str) {
         if (str.length() == 0) {
             System.out.println("please enter a valid string");
         }
@@ -23,14 +22,16 @@ public class Practice {
         for (Entry<Character, Integer> entry : charCount.entrySet()) {
             if (entry.getValue() == 1) {
                 System.out.println(entry.getKey());
-                return; // to stop it from returning more than 1 result
+                break;
             }
         }
+        return ' ';
 
     }
 
     public static void main(String[] args) {
         Practice p = new Practice();
-        p.firstNonRepeat("hi there");
+        System.out.println(p.firstNonRepeat("hite"));
+
     }
 }
